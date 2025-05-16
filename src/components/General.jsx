@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Education from "./Education";
 import Name from "./Name";
+import Experience from "./Experience";
 
 
 function General(){
@@ -14,7 +15,10 @@ function General(){
         school: "",
         degree: "",
         start: "",
-        end: ""
+        end: "",
+        company: "",
+        title: "",
+        responsibilities: ""
     });
 
     const [submittedValue, setSubmittedValue] = useState(null);
@@ -25,9 +29,7 @@ function General(){
             ...prevData, 
             [name]: value 
         }))
-
     }
-
 
     const submitForm = (e) =>{
         e.preventDefault();
@@ -39,27 +41,35 @@ function General(){
       degree: value.degree,
       start: value.start,
       end: value.end,
+      company: value.company,
+      title: value.title,
+      responsibilities: value.responsibilities
     });
     };
 
-
     return (
-        <>
-
+      <>
+      <div className="header">
        <h1>CV</h1>
+      </div>
 
-       {/* //general information  */}
-       <h2>general information</h2>
+      <div className="content">
+
+       <div className="input">
+       <h2>Information</h2>
       <form onSubmit={submitForm}>
       <Name value ={value} handleChange={handleChange}/>
-    <br />
-
+      <h2>Education</h2>
       <Education  value={value} handleChange={handleChange} />
-
-        <input type="submit" />
+      <h2>Experience</h2>
+      <Experience value={value}  handleChange={handleChange} />
+      <input type="submit" value="save"/>
       </form>
+      </div>
 
         {/* ///submit value  */}
+        <div className="submitted">
+
         { submittedValue &&(
          <div>
             <h2>Name:</h2>
@@ -71,11 +81,19 @@ function General(){
             <p>{submittedValue.degree}</p>
             <p>{submittedValue.start}</p>
             <p>{submittedValue.end}</p>
+            <h2>Experience</h2>
+            <p>{submittedValue.company}</p>
+            <p>{submittedValue.title}</p>
+            <p>{submittedValue.responsibilities}</p>
            
         </div>
+    
        ) }
-       
-        </>
+
+       </div>
+
+        </div>
+      </>
     );     
 
 }
