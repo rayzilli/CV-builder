@@ -3,16 +3,7 @@ function Education({value, handleChange}){
   console.log("Education props:", value);
     return (
         <>
-    
-        <label htmlFor="school">school: 
-            <input type="text"
-            name ="school"
-            value = {value.school}
-            onChange = {handleChange}
-             />
-        </label>
-           <br />
-                <label htmlFor="degree">Degree: 
+          <label htmlFor="degree">Degree: 
                     <input 
                         type="text"
                         name="degree" 
@@ -21,6 +12,16 @@ function Education({value, handleChange}){
                     />
                 </label>
                 <br />
+
+        <label htmlFor="school">School: 
+            <input type="text"
+            name ="school"
+            value = {value.school}
+            onChange = {handleChange}
+             />
+        </label>
+           <br />
+              
                 <label htmlFor="start">Start Date: 
                     <input 
                         type="text"

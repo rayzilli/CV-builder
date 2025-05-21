@@ -2,15 +2,7 @@
 
     return(
         <> 
-      <label htmlFor="Company Name">Company Name: 
-            <input type="text"
-            name ="company"
-            value = {value.company}
-            onChange = {handleChange}
-             />
-        </label>
-           <br />
-                <label htmlFor="title">Title: 
+         <label htmlFor="title">Title: 
                     <input 
                         type="text"
                         name="title" 
@@ -19,6 +11,30 @@
                     />
                 </label>
                 <br />
+      <label htmlFor="Company Name">Company Name: 
+            <input type="text"
+            name ="company"
+            value = {value.company}
+            onChange = {handleChange}
+             />
+        </label>                <br />
+      <label htmlFor="exStart">Start Date: 
+            <input type="text"y
+            name ="exStart"
+            value = {value.exStart}
+            onChange = {handleChange}
+             />
+        </label>       <br />
+      <label htmlFor="Company Name">End Date: 
+            <input type="text"
+            name ="exEnd"
+            value = {value.exEnd}
+            onChange = {handleChange}
+             />
+        </label>
+
+           <br />
+               
                 <label htmlFor="responsibilities">Responsibilities: 
                     <textarea
                         name="responsibilities" 

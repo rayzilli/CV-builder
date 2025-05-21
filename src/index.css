@@ -13,9 +13,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-form input{
+form input, textarea{
   background-color: white;
+  color: black; 
 }
+
+
 
 a {
   font-weight: 500;
@@ -35,16 +38,28 @@ body {
 }
 
 
+header{
+  background-color: #646cff;
+}
+
+#name {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 .content{
   display: grid; 
   grid-template-columns: 1fr 1fr;
   gap: 10px; 
-  width: 95vw
+  width: 90vw
 
 }
 
-.submitted{
-  background-color: #dfe0ff;
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 22px;
 }
 
 h1 {

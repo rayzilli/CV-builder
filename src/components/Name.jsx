@@ -2,7 +2,7 @@
 
     return(
         <> 
-      <label htmlFor="user name">Name: 
+      <label htmlFor="user name">Full Name: 
             <input type="text"
             name ="name"
             value = {value.name}

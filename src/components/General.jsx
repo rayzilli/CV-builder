@@ -1,9 +1,11 @@
 // import { useState } from "react";
 
+
 import { useState } from "react"
 import Education from "./Education";
 import Name from "./Name";
 import Experience from "./Experience";
+import  "./css/General.css";
 
 
 function General(){
@@ -16,12 +18,14 @@ function General(){
         degree: "",
         start: "",
         end: "",
-        company: "",
         title: "",
-        responsibilities: ""
+        company: "",
+        exStart: "",
+        exEnd: "",
+        responsibilities: "",
     });
 
-    const [submittedValue, setSubmittedValue] = useState(null);
+    const [submittedValue, setSubmittedValue] = useState(true);
 
     const handleChange = (e) =>{
         const {name, value} = e.target;
@@ -37,25 +41,28 @@ function General(){
       name: value.name,
       email: value.email,
       phone: value.phone,
-      school: value.school,
       degree: value.degree,
+      school: value.school,
       start: value.start,
       end: value.end,
-      company: value.company,
-      title: value.title,
+      company: value.title,
+      title: value.company,
+      exStart: value.exStart,
+      exEnd: value.exEnd,
       responsibilities: value.responsibilities
     });
     };
 
     return (
       <>
-      <div className="header">
-       <h1>CV</h1>
-      </div>
+      <header>
+       <h1>CV Creator</h1>
+      </header>
 
       <div className="content">
 
        <div className="input">
+        <h2>Create your CV</h2>
        <h2>Information</h2>
       <form onSubmit={submitForm}>
       <Name value ={value} handleChange={handleChange}/>
@@ -72,19 +79,39 @@ function General(){
 
         { submittedValue &&(
          <div>
-            <h2>Name:</h2>
-            <p>{submittedValue.name}</p>
-            <p>{submittedValue.email}</p>
-            <p>{submittedValue.phone}</p>
+            <h2 id="header-name">Name:</h2>
+            <ul className="info">
+              <li className="name">{submittedValue.name}</li>
+              <li className="email-phone">
+                <span className="email">{submittedValue.email}</span>
+                <span className="phone">{submittedValue.phone}</span>
+              </li>
+          
+            </ul>
+
             <h2>Education</h2>
-            <p>{submittedValue.school}</p>
-            <p>{submittedValue.degree}</p>
-            <p>{submittedValue.start}</p>
-            <p>{submittedValue.end}</p>
+            <ul className="education">
+              <li className="degree">{submittedValue.degree}</li>
+              <li className="school">{submittedValue.school}</li>
+              <li className="dates-attended">   
+                 <span className="start">{submittedValue.start}</span>
+                 <span>-</span>
+                <span className="end">{submittedValue.end}</span>
+              </li>
+          
+            </ul>
+    
             <h2>Experience</h2>
-            <p>{submittedValue.company}</p>
-            <p>{submittedValue.title}</p>
-            <p>{submittedValue.responsibilities}</p>
+            <ul className="experience">
+               <li className="title">{submittedValue.title}</li>
+              <li className="company">{submittedValue.company}</li>
+              <li className="dates-attended">
+                <span className="exStart">{submittedValue.exStart}</span>
+                <span>-</span>
+                <span className="exEnd">{submittedValue.exEnd}</span>
+              </li>
+              <li className="responsibilities">{submittedValue.responsibilities}</li>
+            </ul>
            
         </div>
     
