@@ -17,7 +17,8 @@
             value = {value.company}
             onChange = {handleChange}
              />
-        </label>                <br />
+        </label>                
+        <br />
       <label htmlFor="exStart">Start Date: 
             <input type="text"y
             name ="exStart"

@@ -88,9 +88,35 @@ input {
     font-size: 1rem;
 }
 
+
+form input[type=submit]{
+    background-color: darkblue;
+    color: white; 
+    float: left;
+    margin-left: 22px; 
+    margin-top: 22px; 
+    
+}
+
+
+
 textarea {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1rem;
+}
+
+
+#name {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.content{
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; 
+  width: 90vw
+
 }

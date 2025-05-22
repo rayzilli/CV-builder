@@ -70,7 +70,7 @@ function General(){
       <Education  value={value} handleChange={handleChange} />
       <h2>Experience</h2>
       <Experience value={value}  handleChange={handleChange} />
-      <input type="submit" value="save"/>
+      <input type="submit" value="update"/>
       </form>
       </div>
 
